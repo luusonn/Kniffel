@@ -32,7 +32,6 @@ public class Fullhouse {
 			}
 		
 		}
-		
 		return 0;
 	}
 
