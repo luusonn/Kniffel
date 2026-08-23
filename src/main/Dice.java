@@ -5,7 +5,7 @@ import java.util.Random;
 public class Dice {
 	
 	private int value;
-	private Random random;
+	private Random random; 
 
 	public Dice() {
 		this.value = 1;
@@ -22,6 +22,7 @@ public class Dice {
 	
 	public void rolled( ) {
 		value = random.nextInt(6) +1;
+		
 	}
 	
 }
