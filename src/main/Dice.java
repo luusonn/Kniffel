@@ -22,7 +22,6 @@ public class Dice {
 	
 	public void rolled( ) {
 		value = random.nextInt(6) +1;
-		
 	}
 	
 }
