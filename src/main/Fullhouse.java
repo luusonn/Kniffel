@@ -1,7 +1,7 @@
 package main;
 
 public class Fullhouse {
-	
+
 	private Dice[] dice;
 	
 	public Fullhouse(Dice[] dice) {
