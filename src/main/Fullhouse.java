@@ -2,9 +2,9 @@ package main;
 
 public class Fullhouse {
 
-	private Dice[] dice;
+	private Dicetest[] dice;
 	
-	public Fullhouse(Dice[] dice) {
+	public Fullhouse(Dicetest[] dice) {
 		this.dice = dice;
 	}
 	
@@ -15,7 +15,7 @@ public class Fullhouse {
 		for (int i = 1; i <= 6; i++) {
 			int number = 0;
 			
-			for (Dice d: dice) {
+			for (Dicetest d: dice) {
 				if(d.getvalue() == i) {
 					number++;
 				}
