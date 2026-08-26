@@ -1,3 +1,5 @@
+package main;
+
 public class Sechser {
     private Dicetest[] dice;
 

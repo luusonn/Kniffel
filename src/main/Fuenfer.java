@@ -1,3 +1,5 @@
+package main;
+
 public class Fuenfer {
     private Dicetest[] dice;
 
