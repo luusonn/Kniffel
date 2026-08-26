@@ -22,7 +22,7 @@ public class Dicecup extends JFrame{
 	private boolean confirm = false;
     private Random random = new Random();
 	private int counterroll = 1;
-	private JLabel fertig;
+	private JLabel fertig= new JLabel("ZUG BEENDET!");
      
 	public Dicecup() {
 		
@@ -68,7 +68,7 @@ public class Dicecup extends JFrame{
 	            	counterroll++;
 	            	if (counterroll < 4) {
 	                rollDice();}
-	            	else { fertig = new JLabel("ZUG BEENDET");
+	            	else { if(fertig == null) {fertig = new JLabel("ZUG BEENDET");}
 	            	fertig.setFont(new Font("Arial", Font.BOLD, 20));
 						fertig.setBounds(100, 200, 200,50);
 						dicePanel.add(fertig);
@@ -86,6 +86,7 @@ public class Dicecup extends JFrame{
 	           // @Override
 	            public void actionPerformed(ActionEvent e) {
 	            	if (confirm == false) {
+	            		counterroll = 4;
 	            		for (Dice d: dice) {
 	            			int i = 0;
 	            			dices[i] = d.getValue(d);
