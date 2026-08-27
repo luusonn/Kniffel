@@ -1,3 +1,5 @@
+package main;
+
 public class scoreblock {
     private int[][] scoreboard;
     private int players;
