@@ -87,11 +87,10 @@ public class Dicecup extends JFrame{
 	            public void actionPerformed(ActionEvent e) {
 	            	if (confirm == false) {
 	            		counterroll = 4;
-	            		for (Dice d: dice) {
-	            			int i = 0;
-	            			dices[i] = d.getValue(d);
-	            			i++;
-	            		}
+	            		
+	            		for (int i = 0; i < 5; i++) {
+	            		    dices[i] = dice[i].getValue(dice[i]);}
+	            		
 	            		confirm = true;
 	            	}
 	            	else {
@@ -123,14 +122,19 @@ public class Dicecup extends JFrame{
 
 private void select(Dice d, JButton diceB) {
 	if(d.selected == 0) {d.selected = 1;
-	diceB.setText("selected");
-	d.setBorderColor(Color.RED);}
-else {d.selected = 0;
-	diceB.setText("select");
-	d.setBorderColor(Color.BLACK);
+		diceB.setText("selected");
+		d.setBorderColor(Color.RED);}
+	else {d.selected = 0;
+		diceB.setText("select");
+		d.setBorderColor(Color.BLACK);
+}}
+
+public int[] getDices() {
+	return dices;
 }
 
-
-	
-}}
+public boolean isConfirmed() {
+	return confirm;
+}
+}
 
