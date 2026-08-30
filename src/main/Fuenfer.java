@@ -1,6 +1,6 @@
 package main;
 
-public class Fuenfer {
+public class Fuenfer implements Category {
     private Dicetest[] dice;
 
     public Fuenfer(Dicetest[] dice) {

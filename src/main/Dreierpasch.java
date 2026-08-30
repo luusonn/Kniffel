@@ -1,10 +1,10 @@
 package main;
 
-public class Dreierpasch {
+public class Dreierpasch implements Category {
 	
 	private Dice[] dice;
 	
-	public Dreierpasch() {
+	public Dreierpasch(Dice[] dice) {
 		this.dice = dice;
 	}
 	

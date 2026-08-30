@@ -1,6 +1,6 @@
 package main;
 
-public class Chance {
+public class Chance implements Category {
 
     private Dice[] dice;
 
@@ -8,7 +8,7 @@ public class Chance {
         this.dice = dice;
     }
 
-    public int getPoints() {
+    public int calculatePoints() {
 
         int points = 0;
 

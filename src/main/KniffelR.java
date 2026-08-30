@@ -1,6 +1,6 @@
 package main;
 
-public class KniffelR {
+public class KniffelR implements Category{
 
     private Dice[] dice;
 

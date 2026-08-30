@@ -1,6 +1,6 @@
 package main;
 
-public class Viererpasch {
+public class Viererpasch implements Category {
 	
 	private Dice[] dice;
 	
