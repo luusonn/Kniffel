@@ -1,6 +1,6 @@
 package main;
 
-public class Sechser {
+public class Sechser implements Category {
     private Dicetest[] dice;
 
     public Sechser(Dicetest[] dice) {

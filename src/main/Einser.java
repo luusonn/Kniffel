@@ -1,6 +1,6 @@
 package main;
 
-public class Einser {
+public class Einser implements Category {
     private Dicetest[] dice;
 
     public Einser(Dicetest[] dice) {

@@ -1,6 +1,6 @@
 package main;
 
-public class Dreier {
+public class Dreier implements Category {
     private Dicetest[] dice;
 
     public Dreier(Dicetest[] dice) {

@@ -1,6 +1,6 @@
 package main;
 
-public class Chance {
+public class Chance implements Category {
 
     private Dice[] dice;
 

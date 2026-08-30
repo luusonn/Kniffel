@@ -1,6 +1,6 @@
 package main;
 
-public class Fullhouse {
+public class Fullhouse implements Category{
 
     private Dice[] dice;
 

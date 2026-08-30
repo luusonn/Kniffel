@@ -1,6 +1,6 @@
 package main;
 
-public class KleineStrasse {
+public class KleineStrasse implements Category {
 	
 	private Dice[] dice;
 	
