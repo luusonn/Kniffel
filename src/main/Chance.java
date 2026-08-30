@@ -8,7 +8,7 @@ public class Chance {
         this.dice = dice;
     }
 
-    public int getPoints() {
+    public int calculatePoints() {
 
         int points = 0;
 

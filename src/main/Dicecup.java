@@ -51,7 +51,7 @@ public class Dicecup extends JFrame{
 	            diceButtons[i].setBounds(xPositions[i], 135, 100, 40);
 	            diceButtons[i].addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e) {
 	            	select(dice[k], diceButtons[k]);
-	            	}});
+	            	}                                                                   });
 	           dicePanel.add(diceButtons[i]);
 	           
 	            }
