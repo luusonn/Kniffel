@@ -17,8 +17,7 @@ public class ScoreblockGUI extends JPanel{
 
 	    public ScoreblockGUI() {
 
-	        setSize(400, 500);
-	        setLayout(new BorderLayout());
+	    	setLayout(new BorderLayout());
 
 	        String[] columns = {
 	            "Kategorie",

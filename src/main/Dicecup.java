@@ -26,8 +26,7 @@ public class Dicecup extends JPanel{
      
 	public Dicecup() {
 		
-	        setSize(700, 500);
-	        setLayout(new BorderLayout());
+			setLayout(new BorderLayout());
 
 	        JPanel dicePanel = new JPanel(); 
 	        dicePanel.setLayout(null); //so i can manually position dice
