@@ -5,20 +5,19 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 
 
-public class ScoreblockGUI extends JFrame{
+public class ScoreblockGUI extends JPanel{
 
 	    private JTable table;
 
 	    public ScoreblockGUI() {
 
-	        setTitle("Schreibblock");
 	        setSize(400, 500);
-	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        setLayout(new BorderLayout());
 
 	        String[] columns = {
@@ -67,7 +66,6 @@ public class ScoreblockGUI extends JFrame{
 
 	        add(scrollPane, BorderLayout.CENTER);
 
-	        setVisible(true);
 	    }
 	}
 

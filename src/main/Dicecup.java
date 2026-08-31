@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Dicecup extends JFrame{
+public class Dicecup extends JPanel{
 
 	private Dice[] dice;
 	private int dices[] = new int[5];
@@ -26,9 +26,7 @@ public class Dicecup extends JFrame{
      
 	public Dicecup() {
 		
-		 	setTitle("Dice");
 	        setSize(700, 500);
-	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        setLayout(new BorderLayout());
 
 	        JPanel dicePanel = new JPanel(); 
@@ -108,9 +106,10 @@ public class Dicecup extends JFrame{
 	        });
 	        
 	        dicePanel.add(confirmButton);
-	        setVisible(true);
 	    }
 
+	
+	
 	private void rollDice() {
         for (Dice die : dice) {
         	if (die.getSelect(die) == 1) {continue;}
