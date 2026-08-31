@@ -66,7 +66,6 @@ public class Menu extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 new Dicecup();
-
                 dispose();
             }
         });
