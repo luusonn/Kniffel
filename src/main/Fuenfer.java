@@ -1,9 +1,7 @@
-package main;
+public class Fuenfer {
+    private Dice[] dice;
 
-public class Fuenfer implements Category {
-    private Dicetest[] dice;
-
-    public Fuenfer(Dicetest[] dice) {
+    public Fuenfer(Dice[] dice) {
         this.dice = dice;
 
     }
@@ -11,7 +9,7 @@ public class Fuenfer implements Category {
 
         int number = 0;// amount of times the number appears
 
-        for (Dicetest d: dice) {
+        for (Dice d: dice) {
             if(d.getvalue() == 5) {
                 number++;
             }

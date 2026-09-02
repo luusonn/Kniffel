@@ -1,9 +1,7 @@
-package main;
+public class Einser {
+    private Dice[] dice;
 
-public class Einser implements Category {
-    private Dicetest[] dice;
-
-    public Einser(Dicetest[] dice) {
+    public Einser(Dice[] dice) {
         this.dice = dice;
 
     }
@@ -11,7 +9,7 @@ public class Einser implements Category {
 
         int number = 0;// amount of times the number appears
 
-        for (Dicetest d: dice) {
+        for (Dice d: dice) {
             if(d.getvalue() == 1) {
                 number++;
             }

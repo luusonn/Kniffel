@@ -1,9 +1,7 @@
-package main;
+public class Sechser {
+    private Dice[] dice;
 
-public class Sechser implements Category {
-    private Dicetest[] dice;
-
-    public Sechser(Dicetest[] dice) {
+    public Sechser(Dice[] dice) {
         this.dice = dice;
     }
 
@@ -11,7 +9,7 @@ public class Sechser implements Category {
 
             int number = 0;// amount of times the number appears
 
-            for (Dicetest d: dice) {
+            for (Dice d: dice) {
                 if(d.getvalue() == 6) {
                     number++;
                 }
