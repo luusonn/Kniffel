@@ -1,4 +1,6 @@
-public class Vierer {
+package main;
+
+public class Vierer implements Category {
     private Dice[] dice;
 
     public Vierer(Dice[] dice) {
@@ -10,7 +12,7 @@ public class Vierer {
         int number = 0;// amount of times the number appears
 
         for (Dice d: dice) {
-            if(d.getvalue() == 4) {
+            if(d.getValue(d) == 4) {
                 number++;
             }
         }

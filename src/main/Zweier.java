@@ -1,4 +1,6 @@
-public class Zweier {
+package main;
+
+public class Zweier implements Category {
     private Dice[] dice;
 
     public Zweier(Dice[] dice) {
@@ -10,7 +12,7 @@ public class Zweier {
         int number = 0;// amount of times the number appears
 
         for (Dice d: dice) {
-            if(d.getvalue() == 2) {
+            if(d.getValue(d) == 2) {
                 number++;
             }
         }

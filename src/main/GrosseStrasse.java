@@ -34,13 +34,13 @@ public class GrosseStrasse implements Category {
 			
 			previous = i;
 			
-			if (longestSequence > sequence) {
+			if (sequence > longestSequence) {
 				longestSequence = sequence;
 			}
 		}
 		
 		if (longestSequence >= 4) {
-			return 30;
+			return 50;
 		}
 		return 0;
 	}

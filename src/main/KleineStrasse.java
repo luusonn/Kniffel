@@ -34,7 +34,7 @@ public class KleineStrasse implements Category {
 			
 			previous = i;
 			
-			if (longestSequence > sequence) {
+			if (sequence > longestSequence) {
 				longestSequence = sequence;
 			}
 		}

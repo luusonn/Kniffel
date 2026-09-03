@@ -1,4 +1,6 @@
-public class Fuenfer {
+package main;
+
+public class Fuenfer implements Category {
     private Dice[] dice;
 
     public Fuenfer(Dice[] dice) {
@@ -10,7 +12,7 @@ public class Fuenfer {
         int number = 0;// amount of times the number appears
 
         for (Dice d: dice) {
-            if(d.getvalue() == 5) {
+            if(d.getValue(d) == 5) {
                 number++;
             }
         }

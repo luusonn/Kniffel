@@ -16,7 +16,7 @@ public class Menu extends JFrame {
 
     public Menu() {
 
-        setTitle("KNIFFEl Game");
+        setTitle("KNIFFEL Game");
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -56,23 +56,23 @@ public class Menu extends JFrame {
 
         menuPanel.add(quitButton);
 
-        
+
         add(menuPanel);
 
-        
-        // start button
+
+        // START BUTTON
         startButton.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
 
-                new Dicecup();
+                new Game(2);
+
                 dispose();
             }
         });
 
 
-        //rules button
-
+        // RULES BUTTON
         rulesButton.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
@@ -82,9 +82,7 @@ public class Menu extends JFrame {
         });
 
 
-        //quit button
-  
-
+        // QUIT BUTTON
         quitButton.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
@@ -128,16 +126,20 @@ public class Menu extends JFrame {
         JLabel rule10 = new JLabel("z.B 1+1+1+2+2=9 (Punkte:25 unabhaengig von der Augenzahl)");
         JLabel rule11 = new JLabel("Feld10:(Kleine Strasse) Wuerfelkombination von 4 aufeinanderfolgenden Zahlen von 1-4 oder 2-5 oder 3-6");
         JLabel rule12 = new JLabel("z.B 2+3+4+5 (Punkte: 40)");
-        JLabel rule13= new JLabel("Feld11:(Grosse Strasse) Wuerfelkombination von 4 aufeinanderfolgenden Zahlen von 1-5 oder 2-6");
+        JLabel rule13 = new JLabel("Feld11:(Grosse Strasse) Wuerfelkombination von 4 aufeinanderfolgenden Zahlen von 1-5 oder 2-6");
         JLabel rule14 = new JLabel("z.B 1+2+3+4+5 (Punkte=40");
         JLabel rule15 = new JLabel("Feld12:(Kniffel) fuenfmal die selbe Zahl ->z.B 3+3+3+3+3");
-        JLabel rule16 = new JLabel("Punkte: 50 für den ersten Kniffel, 100 für jeden weioteren Kniffel (kann in beliebiges Feld eintragen werden)");
-        JLabel rule17 = new JLabel("Feld13:(Chance) keine besodnere Kombination (Punkte: Augen aller Wuerfel)");
-
-
+        JLabel rule16 = new JLabel("Punkte: 50 für den ersten Kniffel, 100 für jeden weiteren Kniffel (kann in beliebiges Feld eintragen werden)");
+        JLabel rule17 = new JLabel("Feld13:(Chance) keine besondere Kombination (Punkte: Augen aller Wuerfel)");
 
         rulesPanel.add(title);
-        rulesPanel.add(Box.createRigidArea(new Dimension(20, 20)));
+
+        rulesPanel.add(
+                Box.createRigidArea(
+                        new Dimension(20, 20)
+                )
+        );
+
 
         rulesPanel.add(rule1);
         rulesPanel.add(rule2);
@@ -156,7 +158,6 @@ public class Menu extends JFrame {
         rulesPanel.add(rule15);
         rulesPanel.add(rule16);
         rulesPanel.add(rule17);
-
 
 
         rulesFrame.add(rulesPanel);

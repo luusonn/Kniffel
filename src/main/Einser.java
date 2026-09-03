@@ -1,4 +1,6 @@
-public class Einser {
+package main;
+
+public class Einser implements Category {
     private Dice[] dice;
 
     public Einser(Dice[] dice) {
@@ -10,7 +12,7 @@ public class Einser {
         int number = 0;// amount of times the number appears
 
         for (Dice d: dice) {
-            if(d.getvalue() == 1) {
+            if(d.getValue(d) == 1) {
                 number++;
             }
         }

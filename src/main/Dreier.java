@@ -1,4 +1,6 @@
-public class Dreier {
+package main;
+
+public class Dreier implements Category {
     private Dice[] dice;
 
     public Dreier(Dice[] dice) {
@@ -10,7 +12,7 @@ public class Dreier {
         int number = 0;// amount of times the number appears
 
         for (Dice d: dice) {
-            if(d.getvalue() == 3) {
+            if(d.getValue(d) == 3) {
                 number++;
             }
         }
