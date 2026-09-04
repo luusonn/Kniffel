@@ -80,19 +80,10 @@ public class Dicecup extends JPanel{
 	        confirmButton.addActionListener(new ActionListener() {
 	           // @Override
 	            public void actionPerformed(ActionEvent e) {
-	            	if (confirm == false) {
 	            		counterroll = 4;
 	            		confirm = true;
-	            	}
-	            	
-	            	else {
-	            		confirm = false;
-	            		if (fertig != null) {dicePanel.remove(fertig);
-	            							fertig = null;}
-	            		counterroll = 0;
-	            		for (int i = 0; i< 5; i++) { if(dice[i].selected == 1) {select(dice[i], diceButtons[i]);};}
-	            	}
-				dicePanel.repaint();
+
+	            		dicePanel.repaint();
 	            }
 	        });
 	        
