@@ -9,14 +9,12 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Dicecup extends JPanel{
 
 	private Dice[] dice;
-	private int dices[] = new int[5];
 	private JButton[] diceButtons;
 	
 	private boolean confirm = false;
@@ -84,16 +82,10 @@ public class Dicecup extends JPanel{
 	            public void actionPerformed(ActionEvent e) {
 	            	if (confirm == false) {
 	            		counterroll = 4;
-	            		
-	            		for (int i = 0; i < 5; i++) {
-	            		    dices[i] = dice[i].getValue(dice[i]);}
-	            		
 	            		confirm = true;
 	            	}
+	            	
 	            	else {
-	            		for(int i = 0; i < 5; i ++) {
-	            			dices[i] = 0;
-	            		}
 	            		confirm = false;
 	            		if (fertig != null) {dicePanel.remove(fertig);
 	            							fertig = null;}
@@ -127,8 +119,8 @@ private void select(Dice d, JButton diceB) {
 		d.setBorderColor(Color.BLACK);
 }}
 
-public int[] getDices() {
-	return dices;
+public Dice[] getDice() {
+	return dice;
 }
 
 public boolean isConfirmed() {
