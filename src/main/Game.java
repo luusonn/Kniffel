@@ -371,7 +371,8 @@ public class Game extends JFrame {
             for (int category = 0;category < 13;category++) {
 
                 int value =scoreboard.read(player,category);
-
+                
+                if (category == 6  && total >= 63) {total += 35;}
 
                 if (value != 900) {total += value;
                 }
