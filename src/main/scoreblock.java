@@ -1,18 +1,22 @@
 package main;
 
 public class scoreblock {
+    private Rules rules;
     private int[][] scoreboard;
     private int players;
 
     public scoreblock(int players){
         this.players = players;
-        scoreboard = new int[13][players];
+        this.scoreboard = new int[13][players];
+        this.rules = new Rules();
     }
 
-    public int write(int points,int player,int category){
-        boolean b = scoreboard[category][player] == 900;
-        if((scoreboard[category][player]!=0)|| b){return 0;}//if the int is not 0 theres alr points written there so we shouldnt override them 900 is used to cancel any interaction
-        else{scoreboard[category][player]=points;return 1;}
+    public int write(Dice[] dice,int player,int category){
+        
+        if((scoreboard[category][player]!=0)){return 0;}
+        if((category==13)&&kniffelcheck()==false){scoreboard[category][player]=100;return 2;}
+
+        else {scoreboard[category][player]=rules.implentRule(dice,category);return 3;}
     }
 
     public int delete(int player,int category){
@@ -30,4 +34,11 @@ public class scoreblock {
     }
 
     public int playercount(){return this.players;}
+
+    private boolean kniffelcheck(){
+        for(int x=0;x>players;x++){
+            if((scoreboard[13][x]!=0)&&(scoreboard[13][x]!=900)){return false;}//900 because it does not apply unless val!=900
+        }
+        return true;
+    }
 }
