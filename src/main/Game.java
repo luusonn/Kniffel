@@ -93,7 +93,7 @@ public class Game extends JFrame {
         }
 
 
-        Dice[] dice = createDiceFromDicecup();
+        Dice[] dice = dicecup.getDice();
 
         Category[] categories = createCategories(dice);
 
@@ -124,24 +124,6 @@ public class Game extends JFrame {
         };
 
         return categories;
-    }
-
-
-    private Dice[] createDiceFromDicecup() {
-
-        int[] values =dicecup.getDices();
-
-        Dice[] dice =new Dice[5];
-
-
-        for (int i = 0; i < 5; i++) {
-
-            dice[i] = new Dice();
-
-            dice[i].setValue(values[i]);
-        }
-
-       return dice;
     }
 
 
@@ -371,6 +353,9 @@ public class Game extends JFrame {
             for (int category = 0;category < 13;category++) {
 
                 int value =scoreblock.read(player,category);
+
+                
+                if (category == 6  && total >= 63) {total += 35;}
 
 
                 if (value != 900) {total += value;}
