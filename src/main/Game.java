@@ -35,7 +35,7 @@ public class Game extends JFrame {
     private Dicecup dicecup;
     private JLabel playerLabel;
     private JLabel totalLabel;
-    private scoreblock scoreboard;
+    private scoreblock scoreblock;
     private JSplitPane splitPane;
     private JTable table;
     private DefaultTableModel tableModel;
@@ -49,7 +49,7 @@ public class Game extends JFrame {
 
     public Game(int players) {
 
-        scoreboard = new scoreblock(players);
+        scoreblock = new scoreblock(players);
 
         setTitle("KNIFFEL Game");
         setSize(1100, 520);
@@ -79,21 +79,15 @@ public class Game extends JFrame {
 
         if (!dicecup.isConfirmed()) {
 
-            JOptionPane.showMessageDialog(
-                    this,
-                    "Press CONFIRM"
-            );
+            JOptionPane.showMessageDialog(this,"Press CONFIRM");
 
             return;
         }
 
 
-        if (scoreboard.read(currentPlayer, category) != 0) {
+        if (scoreblock.read(currentPlayer, category) != 0) {
 
-            JOptionPane.showMessageDialog(
-                    this,
-                    "Field is already used!"
-            );
+            JOptionPane.showMessageDialog( this,"Field is already in use!");
 
             return;
         }
@@ -244,7 +238,7 @@ public class Game extends JFrame {
         currentPlayer++;
 
 
-        if (currentPlayer >= scoreboard.playercount()) {
+        if (currentPlayer >= scoreblock.playercount()) {
 
             currentPlayer = 0;
         }
@@ -307,12 +301,12 @@ public class Game extends JFrame {
     	
         if (points == 0) {
 
-            scoreboard.streichen(currentPlayer,category);
+            scoreblock.streichen(currentPlayer,category);
 
         } 
         else {
 
-            scoreboard.write(points,currentPlayer,category);
+            scoreblock.write(points,currentPlayer,category);
         }
 
 
@@ -322,7 +316,7 @@ public class Game extends JFrame {
 
     private void crossCategory(int category) {
 
-        scoreboard.streichen(currentPlayer,category);
+        scoreblock.streichen(currentPlayer,category);
 
         finishTurn();
     }
@@ -333,10 +327,10 @@ public class Game extends JFrame {
         for (int category = 0;category < 13;category++) {
 
 
-            for (int player = 0;player < scoreboard.playercount(); player++) {
+            for (int player = 0;player < scoreblock.playercount(); player++) {
 
 
-                int value =scoreboard.read(player,category);
+                int value =scoreblock.read(player,category);
 
 
                 if (value == 0) {
@@ -357,24 +351,30 @@ public class Game extends JFrame {
 
         updateTotal();
     }
+    // Bonus sollte mit total zusammen addiert werden (+35) :)
+    /*private void bonusTotal() {
+    	for (int category =0; category >= 5  ;category++)
+    	 if(value >= 63 && category <=5 ) {
 
+         }
+    }*/
 
     private void updateTotal() {
 
         String text = "Total Points: ";
 
 
-        for (int player = 0;player < scoreboard.playercount();player++) {
+        for (int player = 0;player < scoreblock.playercount();player++) {
 
             int total = 0;
 
             for (int category = 0;category < 13;category++) {
 
-                int value =scoreboard.read(player,category);
+                int value =scoreblock.read(player,category);
 
 
-                if (value != 900) {total += value;
-                }
+                if (value != 900) {total += value;}
+               
             }
 
 

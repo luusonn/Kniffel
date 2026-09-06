@@ -40,7 +40,7 @@ public class GrosseStrasse implements Category {
 		}
 		
 		if (longestSequence >= 4) {
-			return 50;
+			return 40;
 		}
 		return 0;
 	}
