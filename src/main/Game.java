@@ -104,30 +104,8 @@ public class Game extends JFrame {
     }
 
 
-    private Category[] createCategories(Dice[] dice) {
-
-        Category[] categories = {
-
-                new Einser(dice),
-                new Zweier(dice),
-                new Dreier(dice),
-                new Vierer(dice),
-                new Fuenfer(dice),
-                new Sechser(dice),
-                new Dreierpasch(dice),
-                new Viererpasch(dice),
-                new Fullhouse(dice),
-                new KleineStrasse(dice),
-                new GrosseStrasse(dice),
-                new KniffelR(dice),
-                new Chance(dice)
-        };
-
-        return categories;
-    }
-
-
-    private JPanel createScorePanel(int players) {
+   
+         private JPanel createScorePanel(int players) {
 
         JPanel panel = new JPanel();
 
@@ -288,7 +266,7 @@ public class Game extends JFrame {
         } 
         else {
 
-            scoreblock.write(points,currentPlayer,category);
+            scoreblock.write(dice,currentPlayer,category);
         }
 
 
