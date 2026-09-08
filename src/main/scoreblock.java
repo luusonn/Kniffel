@@ -16,7 +16,9 @@ public class scoreblock {
         if((scoreboard[category][player]!=0)){return 0;}
         if((category==13)&&kniffelcheck()==false){scoreboard[category][player]=100;return 2;}
 
-        else {scoreboard[category][player]=rules.implentRule(dice,category);return 3;}
+        else {scoreboard[category][player]=rules.implentRule(dice,category);
+        return 3;
+        }
     }
 
     public int delete(int player,int category){
@@ -37,7 +39,7 @@ public class scoreblock {
 
     private boolean kniffelcheck(){
         for(int x=0;x>players;x++){
-            if((scoreboard[13][x]!=0)&&(scoreboard[13][x]!=900)){return false;}//900 because it does not apply unless val!=900
+            if((scoreboard[11][x]!=0)&&(scoreboard[13][x]!=900)){return false;}//900 because it does not apply unless val!=900
         }
         return true;
     }

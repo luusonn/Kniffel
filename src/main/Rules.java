@@ -7,19 +7,19 @@ public class Rules {
 
 
 public int implentRule(Dice[] dice,int rulenumber){
-    if(rulenumber==1){return einser(dice);}
-    if(rulenumber==2){return zweier(dice);}
-    if(rulenumber==3){return dreier(dice);}
-    if(rulenumber==4){return vierer(dice);}
-    if(rulenumber==5){return fuenfer(dice);}
-    if(rulenumber==6){return sechser(dice);}
-    if(rulenumber==7){return dreierpasch(dice);}
-    if(rulenumber==8){return viererpasch(dice);}
-    if(rulenumber==9){return fullhouse(dice);}
-    if(rulenumber==10){return kleinestrasse(dice);}
-    if(rulenumber==11){return grossestrasse(dice);}
-    if(rulenumber==12){return kniffel(dice);}
-    if(rulenumber==13){return chance(dice);}
+    if(rulenumber==0){return einser(dice);}
+    if(rulenumber==1){return zweier(dice);}
+    if(rulenumber==2){return dreier(dice);}
+    if(rulenumber==3){return vierer(dice);}
+    if(rulenumber==4){return fuenfer(dice);}
+    if(rulenumber==5){return sechser(dice);}
+    if(rulenumber==6){return dreierpasch(dice);}
+    if(rulenumber==7){return viererpasch(dice);}
+    if(rulenumber==8){return fullhouse(dice);}
+    if(rulenumber==9){return kleinestrasse(dice);}
+    if(rulenumber==10){return grossestrasse(dice);}
+    if(rulenumber==11){return kniffel(dice);}
+    if(rulenumber==12){return chance(dice);}
 
     else{return 1000;}//error happened
 
@@ -195,7 +195,7 @@ private int kleinestrasse(Dice[] dice) {
 
         previous = i;
 
-        if (longestSequence > sequence) {
+        if (sequence > longestSequence) {
             longestSequence = sequence;
         }
     }
@@ -230,13 +230,13 @@ private int grossestrasse(Dice[] dice){
 
         previous = i;
 
-        if (longestSequence > sequence) {
+        if (sequence > longestSequence) {
             longestSequence = sequence;
         }
     }
 
     if (longestSequence >= 4) {
-        return 30;
+        return 40;
     }
     return 0;
 }

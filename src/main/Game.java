@@ -79,26 +79,21 @@ public class Game extends JFrame {
 
         if (!dicecup.isConfirmed()) {
 
-            JOptionPane.showMessageDialog(this,"Press CONFIRM");
-
+            JOptionPane.showMessageDialog(this, "Press CONFIRM");
             return;
         }
-
 
         if (scoreblock.read(currentPlayer, category) != 0) {
 
-            JOptionPane.showMessageDialog( this,"Field is already in use!");
-
+            JOptionPane.showMessageDialog(this, "Field is already in use!");
             return;
         }
 
-
         Dice[] dice = dicecup.getDice();
 
-        Category[] categories = createCategories(dice);
+        Rules rules = new Rules();
 
-        int points =
-                categories[category].calculatePoints();
+        int points = rules.implentRule(dice, category);
 
         showChoice(category, points);
     }
@@ -258,6 +253,8 @@ public class Game extends JFrame {
 
 
     private void writePoints(int category,int points) {
+    	
+    	Dice[] dice = dicecup.getDice();
     	
         if (points == 0) {
 
