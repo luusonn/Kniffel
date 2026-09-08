@@ -16,6 +16,8 @@ public class Dicecup extends JPanel{
 
 	private Dice[] dice;
 	private JButton[] diceButtons;
+	private JButton[] rigg = new JButton[5];
+	int[] xPositions = {30,160,290,420,550};
 	
 	private boolean confirm = false;
     private Random random = new Random();
@@ -31,8 +33,6 @@ public class Dicecup extends JPanel{
 	        
 	        dice = new Dice[5];
 	        diceButtons = new JButton[5];
-	        
-	        int[] xPositions = {30,160,290,420,550};
 	        
 	        for (int i = 0; i < 5; i++) {
 	        	
@@ -50,13 +50,17 @@ public class Dicecup extends JPanel{
 	           dicePanel.add(diceButtons[i]);
 	           
 	            }
+	        // die beiden zeilen fügen Knöpfe zum manuellen Verändern der Würfel ein ( for rigging)
+	       // riggbuttons();
+	       // for(int f = 0; f < 5; f++) {dicePanel.add(rigg[f]);}
 
 	        add(dicePanel, BorderLayout.CENTER);
 	        
+	        //Button to roll the dice and wnforce to only roll 3 times
 	        JButton rollButton = new JButton("ROLL DICE");
 
 	        rollButton.setFont(new Font("Arial", Font.BOLD, 20));
-	        rollButton.setBounds(275, 200, 150, 50);
+	        rollButton.setBounds(275, 210, 150, 50);
 	        rollButton.addActionListener(new ActionListener() {
 	           // @Override
 	            public void actionPerformed(ActionEvent e) {
@@ -73,6 +77,7 @@ public class Dicecup extends JPanel{
 	        
 	        dicePanel.add(rollButton);
 	        
+	        //confirm button locks in current dice
 	        JButton confirmButton = new JButton("CONFIRM");
 
 	        confirmButton.setFont(new Font("Arial", Font.BOLD, 20));
@@ -92,13 +97,13 @@ public class Dicecup extends JPanel{
 
 	
 	
-	private void rollDice() {
-        for (Dice die : dice) {
-        	if (die.getSelect(die) == 1) {continue;}
-            int value = random.nextInt(6) + 1;
-            die.setValue(value);
+private void rollDice() {
+	for (Dice die : dice) {
+		if (die.getSelect(die) == 1) {continue;}
+        int value = random.nextInt(6) + 1;
+        die.setValue(value);
         }
-    }
+}
 
 
 private void select(Dice d, JButton diceB) {
@@ -108,7 +113,8 @@ private void select(Dice d, JButton diceB) {
 	else {d.selected = 0;
 		diceB.setText("select");
 		d.setBorderColor(Color.BLACK);
-}}
+		}
+}
 
 public Dice[] getDice() {
 	return dice;
@@ -116,6 +122,18 @@ public Dice[] getDice() {
 
 public boolean isConfirmed() {
 	return confirm;
+}
+
+private void riggbuttons() {	
+	for(int i = 0; i < 5; i++) {
+		int k = i;
+		rigg[k] = new JButton("+1");
+        rigg[k].setBounds(xPositions[k], 180, 100, 20);
+        rigg[k].addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e) {
+        	int v = dice[k].getValue(dice[k]) + 1;
+        	if (v > 6) {v = 1;};
+        	dice[k].setValue(v);}});
+		}
 }
 }
 
