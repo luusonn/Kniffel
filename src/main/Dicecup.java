@@ -132,7 +132,12 @@ private void riggbuttons() {
         rigg[k].addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e) {
         	int v = dice[k].getValue(dice[k]) + 1;
         	if (v > 6) {v = 1;};
-        	dice[k].setValue(v);}});
+        	dice[k].setValue(v);
+        	repaint();
+        }
+        });
+        
+        add(rigg[k]);
 		}
 }
 }
