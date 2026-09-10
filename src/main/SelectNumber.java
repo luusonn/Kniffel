@@ -66,30 +66,26 @@ public class SelectNumber extends JFrame {
 
             String input = textField.getText();
 
-            number = Integer.parseInt(input);
+            try {
 
-            if(number > 5) {
-            	JOptionPane.showMessageDialog(this,"Player number can't be higher than 5!!");
+                number = Integer.parseInt(input);
 
-                return;
-            }
-            else {
+                if(number < 1 || number > 5) {
+
+                    JOptionPane.showMessageDialog(
+                        this,
+                        "Enter a number between 1 and 5!"
+                    );
+
+                    return;
+                }
 
                 new Game(number);
 
                 dispose();
+
+            } catch(NumberFormatException error) {JOptionPane.showMessageDialog(this,"No letters!");
             }
-            });
-
-
-        setVisible(true);
-
+        });
     }
-
-
-    public int getNumber() {
-
-        return number;
-    }
-
 }
