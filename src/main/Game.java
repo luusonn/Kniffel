@@ -39,7 +39,7 @@ public class Game extends JFrame {
     private JSplitPane splitPane;
     private JTable table;
     private DefaultTableModel tableModel;
-
+    private int rounds = 1;
 
     public Game() {
 
@@ -196,6 +196,10 @@ public class Game extends JFrame {
         if (currentPlayer >= scoreblock.playercount()) {
 
             currentPlayer = 0;
+            rounds ++;
+            if (rounds == 14) {
+            	new EndScreen(scoreblock);
+            	dispose();}
         }
 
 
