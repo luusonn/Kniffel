@@ -25,8 +25,8 @@ public class Dice extends JPanel{
 	        repaint();
 	    }
 	    
-	    public int getValue(Dice d) {
-	    	return d.value;
+	    public int getValue() {
+	    	return value;
 	    }
 	    
 	    public void setBorderColor(Color color) {
@@ -35,7 +35,7 @@ public class Dice extends JPanel{
 	    }
 	    
 	    //selectable
-	    public int getSelect(Dice d) {
+	    public int getSelect() {
 	    	return selected;}
 	    
 

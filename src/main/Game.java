@@ -91,9 +91,9 @@ public class Game extends JFrame {
 
         Dice[] dice = dicecup.getDice();
 
-        Rules rules = new Rules();
+        
 
-        int points = rules.implentRule(dice, category);
+        int points = scoreblock.calculate(dice, currentPlayer, category);
 
         showChoice(category, points);
     }
@@ -258,8 +258,6 @@ public class Game extends JFrame {
 
     private void writePoints(int category,int points) {
     	
-    	Dice[] dice = dicecup.getDice();
-    	
         if (points == 0) {
 
             scoreblock.streichen(currentPlayer,category);
@@ -267,7 +265,7 @@ public class Game extends JFrame {
         } 
         else {
 
-            scoreblock.write(dice,currentPlayer,category);
+            scoreblock.write(points,currentPlayer,category);
         }
 
 
@@ -312,14 +310,7 @@ public class Game extends JFrame {
 
         updateTotal();
     }
-    // Bonus sollte mit total zusammen addiert werden (+35) :)
-    /*private void bonusTotal() {
-    	for (int category =0; category >= 5  ;category++)
-    	 if(value >= 63 && category <=5 ) {
-
-         }
-    }*/
-
+   
     private void updateTotal() {
 
         String text = "Total Points: ";

@@ -11,12 +11,15 @@ public class scoreblock {
         this.rules = new Rules();
     }
 
-    public int write(Dice[] dice,int player,int category){
-        
-        if((scoreboard[category][player]!=0)){return 0;}
-        if((rules.implentRule(dice,12)==50)&&kniffelcheck()==false){scoreboard[category][player]=100;return 2;}
-
-        else {scoreboard[category][player]=rules.implentRule(dice,category);return 3;}
+    public int calculate(Dice[] dice,int player, int category) {
+    	if((scoreboard[category][player]!=0)){return 0;}
+        if((rules.implentRule(dice,11)==50)&&kniffelcheck(player)==false){return 100;}
+        else {return rules.implentRule(dice, category);}
+    }
+    
+    public void write(int points, int player, int category){
+        if(points == 100){scoreboard[category][player]=100;}
+        else {scoreboard[category][player]=points;}
     }
 
     public int delete(int player,int category){
@@ -35,10 +38,9 @@ public class scoreblock {
 
     public int playercount(){return this.players;}
 
-    private boolean kniffelcheck(){
-        for(int x=0;x>players;x++){
-            if((scoreboard[13][x]!=0)&&(scoreboard[13][x]!=900)){return false;}//900 because it does not apply unless val!=900
-        }
-        return true;
+    private boolean kniffelcheck(int player){
+ 
+            if((scoreboard[11][player]!=0)&&(scoreboard[11][player]!=900)){return false;}//900 because it does not apply unless val!=900
+            else{return true;}
     }
 }

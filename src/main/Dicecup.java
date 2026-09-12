@@ -99,7 +99,7 @@ public class Dicecup extends JPanel{
 	
 private void rollDice() {
 	for (Dice die : dice) {
-		if (die.getSelect(die) == 1) {continue;}
+		if (die.getSelect() == 1) {continue;}
         int value = random.nextInt(6) + 1;
         die.setValue(value);
         }
@@ -130,14 +130,12 @@ private void riggbuttons() {
 		rigg[k] = new JButton("+1");
         rigg[k].setBounds(xPositions[k], 180, 100, 20);
         rigg[k].addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e) {
-        	int v = dice[k].getValue(dice[k]) + 1;
+        	int v = dice[k].getValue() + 1;
         	if (v > 6) {v = 1;};
         	dice[k].setValue(v);
         	repaint();
         }
         });
-        
-        add(rigg[k]);
 		}
 }
 }

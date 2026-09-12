@@ -38,7 +38,7 @@ private int einser(Dice[] dice){
     int number = 0;// amount of times the number appears(same for following classes)
 
     for (Dice d: dice) {
-        if(d.getValue(d) == 1) {
+        if(d.getValue() == 1) {
             number++;
         }
     }
@@ -49,7 +49,7 @@ private int zweier(Dice[] dice){
     int number = 0;
 
     for (Dice d: dice) {
-        if(d.getValue(d) == 2) {
+        if(d.getValue() == 2) {
             number++;
         }
     }
@@ -61,7 +61,7 @@ private int dreier(Dice[] dice){
     int number = 0;
 
     for (Dice d: dice) {
-        if(d.getValue(d) == 3) {
+        if(d.getValue() == 3) {
             number++;
         }
     }
@@ -73,7 +73,7 @@ private int vierer(Dice[] dice){
     int number = 0;
 
     for (Dice d: dice) {
-        if(d.getValue(d) == 4) {
+        if(d.getValue() == 4) {
             number++;
         }
     }
@@ -85,7 +85,7 @@ private int fuenfer(Dice[] dice){
     int number = 0;
 
     for (Dice d: dice) {
-        if(d.getValue(d) == 5) {
+        if(d.getValue() == 5) {
             number++;
         }
     }
@@ -97,7 +97,7 @@ private int sechser(Dice[] dice){
     int number = 0;// amount of times the number appears
 
     for (Dice d: dice) {
-        if(d.getValue(d) == 6) {
+        if(d.getValue() == 6) {
             number++;
         }
     }
@@ -111,7 +111,7 @@ private int dreierpasch(Dice[] dice){
         int number =0;
 
         for(Dice d: dice) {
-            if(d.getValue(d) ==i){
+            if(d.getValue() ==i){
                 number++;
             }
         }
@@ -119,7 +119,7 @@ private int dreierpasch(Dice[] dice){
             int points =0;
 
             for(Dice d : dice) {
-                points += d.getValue(d);
+                points += d.getValue();
             }
             return points;
         }
@@ -129,7 +129,7 @@ private int dreierpasch(Dice[] dice){
 private int viererpasch(Dice[] dice){for(int i=1;i<=6;i++) {
     int number =0;
     for(Dice d: dice) {
-        if(d.getValue(d) ==i){
+        if(d.getValue() ==i){
             number++;
         }
     }
@@ -137,7 +137,7 @@ private int viererpasch(Dice[] dice){for(int i=1;i<=6;i++) {
         int points =0;
 
         for(Dice d : dice) {
-            points += d.getValue(d);
+            points += d.getValue();
         }
         return points;
     }
@@ -151,7 +151,7 @@ private int fullhouse(Dice[] dice){
         int number = 0;
 
         for (Dice d : dice) {
-            if (d.getValue(d) == i) {
+            if (d.getValue() == i) {
                 number++;
             }
         }
@@ -176,7 +176,7 @@ private int kleinestrasse(Dice[] dice) {
     boolean[] numbers = new boolean[7];
 
     for (Dice d : dice) {
-        numbers[d.getValue(d)] = true;
+        numbers[d.getValue()] = true;
     }
     int previous = 0;
     int sequence = 0;
@@ -209,7 +209,7 @@ private int grossestrasse(Dice[] dice){
     boolean[] numbers = new boolean[7];
 
     for (Dice d: dice) {
-        numbers[d.getValue(d)] = true;
+        numbers[d.getValue()] = true;
     }
 
     int previous = 0;
@@ -242,9 +242,9 @@ private int grossestrasse(Dice[] dice){
 }
 
 private int kniffel(Dice[] dice){
-    int number1 = dice[0].getValue(dice[0]);
+    int number1 = dice[0].getValue();
     for (Dice d : dice) {
-        int currentNumber = d.getValue(d);
+        int currentNumber = d.getValue();
         if (currentNumber != number1) {
             return 0;
         }
@@ -255,7 +255,7 @@ private int kniffel(Dice[] dice){
 private int chance(Dice[] dice){
     int points = 0;
     for (Dice d : dice) {
-        points += d.getValue(d);
+        points += d.getValue();
     }
     return points;
 }
