@@ -7,14 +7,14 @@ import java.awt.Graphics2D;
 import java.util.Random;
 import javax.swing.JPanel;
 
-public class Dice extends JPanel{
+public class DiceGUI extends JPanel{
 
 	Random r = new Random();
 	 private int value = r.nextInt(6) + 1;;
 	 private Color dcolor = Color.BLACK;
 	 int selected = 0;
 
-	    public Dice() {
+	    public DiceGUI() {
 	        setPreferredSize(new java.awt.Dimension (100, 100));
 	        setBackground(Color.WHITE);
 	    }

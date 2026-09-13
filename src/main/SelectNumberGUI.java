@@ -12,11 +12,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class SelectNumber extends JFrame {
+public class SelectNumberGUI extends JFrame {
 
     private int number;
 
-    public SelectNumber() {
+    public SelectNumberGUI() {
 
         setTitle("Select Number");
 
@@ -80,11 +80,11 @@ public class SelectNumber extends JFrame {
                     return;
                 }
 
-                new Game(number);
+                new GameGUI(number);
 
                 dispose();
 
-            } catch(NumberFormatException error) {JOptionPane.showMessageDialog(this,"No letters!");
+            } catch(NumberFormatException error) {JOptionPane.showMessageDialog(this,"Choose a number between 1 and 5!!!");
             }
         });
     }

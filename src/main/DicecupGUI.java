@@ -12,9 +12,9 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Dicecup extends JPanel{
+public class DicecupGUI extends JPanel{
 
-	private Dice[] dice;
+	private DiceGUI[] dice;
 	private JButton[] diceButtons;
 	private JButton[] rigg = new JButton[5];
 	int[] xPositions = {30,160,290,420,550};
@@ -24,19 +24,19 @@ public class Dicecup extends JPanel{
 	private int counterroll = 1;
 	private JLabel fertig= new JLabel("ZUG BEENDET!");
      
-	public Dicecup() {
+	public DicecupGUI() {
 		
 			setLayout(new BorderLayout());
 
 	        JPanel dicePanel = new JPanel(); 
 	        dicePanel.setLayout(null); //so i can manually position dice
 	        
-	        dice = new Dice[5];
+	        dice = new DiceGUI[5];
 	        diceButtons = new JButton[5];
 	        
 	        for (int i = 0; i < 5; i++) {
 	        	
-	            dice[i] = new Dice();
+	            dice[i] = new DiceGUI();
 	            dice[i].setBounds(xPositions[i], 20, 100, 100);
 	            dicePanel.add(dice[i]);
 	            
@@ -98,7 +98,7 @@ public class Dicecup extends JPanel{
 	
 	
 private void rollDice() {
-	for (Dice die : dice) {
+	for (DiceGUI die : dice) {
 		if (die.getSelect() == 1) {continue;}
         int value = random.nextInt(6) + 1;
         die.setValue(value);
@@ -106,7 +106,7 @@ private void rollDice() {
 }
 
 
-private void select(Dice d, JButton diceB) {
+private void select(DiceGUI d, JButton diceB) {
 	if(d.selected == 0) {d.selected = 1;
 		diceB.setText("selected");
 		d.setBorderColor(Color.RED);}
@@ -116,7 +116,7 @@ private void select(Dice d, JButton diceB) {
 		}
 }
 
-public Dice[] getDice() {
+public DiceGUI[] getDice() {
 	return dice;
 }
 

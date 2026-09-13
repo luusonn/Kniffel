@@ -13,7 +13,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 
-public class Game extends JFrame {
+public class GameGUI extends JFrame {
 
     private String[] categoryNames = {
             "Einser",
@@ -32,24 +32,24 @@ public class Game extends JFrame {
     };
 
     private int currentPlayer = 0;
-    private Dicecup dicecup;
+    private DicecupGUI dicecup;
     private JLabel playerLabel;
     private JLabel totalLabel;
-    private scoreblock scoreblock;
+    private Scoreblock scoreblock;
     private JSplitPane splitPane;
     private JTable table;
     private DefaultTableModel tableModel;
     private int rounds = 1;
 
-    public Game() {
+    public GameGUI() {
 
         this(1);
     }
 
 
-    public Game(int players) {
+    public GameGUI(int players) {
 
-        scoreblock = new scoreblock(players);
+        scoreblock = new Scoreblock(players);
 
         setTitle("KNIFFEL Game");
         setSize(1100, 520);
@@ -58,7 +58,7 @@ public class Game extends JFrame {
 
         JPanel scorePanel = createScorePanel(players);
 
-        dicecup = new Dicecup();
+        dicecup = new DicecupGUI();
 
         splitPane = new JSplitPane(
                 JSplitPane.HORIZONTAL_SPLIT,
@@ -89,7 +89,7 @@ public class Game extends JFrame {
             return;
         }
 
-        Dice[] dice = dicecup.getDice();
+        DiceGUI[] dice = dicecup.getDice();
 
         
 
@@ -198,7 +198,7 @@ public class Game extends JFrame {
             currentPlayer = 0;
             rounds ++;
             if (rounds == 14) {
-            	new EndScreen(scoreblock);
+            	new EndScreenGUI(scoreblock);
             	dispose();}
         }
 
@@ -211,7 +211,7 @@ public class Game extends JFrame {
 
     private void createNewDicecup() {
 
-        dicecup = new Dicecup();
+        dicecup = new DicecupGUI();
 
         splitPane.setRightComponent(dicecup);
 

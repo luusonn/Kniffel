@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args){
      
     	//new Dicecup();
-    	new Menu();
+    	new MenuGUI();
     	//new Dicecup();
     	//new ScoreblockGUI();
     	//new Game();

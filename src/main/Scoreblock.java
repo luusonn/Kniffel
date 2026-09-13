@@ -1,17 +1,17 @@
 package main;
 
-public class scoreblock {
+public class Scoreblock {
     private Rules rules;
     private int[][] scoreboard;
     private int players;
 
-    public scoreblock(int players){
+    public Scoreblock(int players){
         this.players = players;
         this.scoreboard = new int[13][players];
         this.rules = new Rules();
     }
 
-    public int calculate(Dice[] dice,int player, int category) {
+    public int calculate(DiceGUI[] dice,int player, int category) {
     	if((scoreboard[category][player]!=0)){return 0;}
         if((rules.implentRule(dice,11)==50)&&kniffelcheck(player)==false){return 100;}
         else {return rules.implentRule(dice, category);}

@@ -6,7 +6,7 @@ public class Rules {
     public Rules(){}
 
 
-public int implentRule(Dice[] dice,int rulenumber){
+public int implentRule(DiceGUI[] dice,int rulenumber){
     if(rulenumber==0){return einser(dice);}
     if(rulenumber==1){return zweier(dice);}
     if(rulenumber==2){return dreier(dice);}
@@ -34,10 +34,10 @@ public int implentRule(Dice[] dice,int rulenumber){
 
 
 
-private int einser(Dice[] dice){
+private int einser(DiceGUI[] dice){
     int number = 0;// amount of times the number appears(same for following classes)
 
-    for (Dice d: dice) {
+    for (DiceGUI d: dice) {
         if(d.getValue() == 1) {
             number++;
         }
@@ -45,10 +45,10 @@ private int einser(Dice[] dice){
     return number;
 }
 
-private int zweier(Dice[] dice){
+private int zweier(DiceGUI[] dice){
     int number = 0;
 
-    for (Dice d: dice) {
+    for (DiceGUI d: dice) {
         if(d.getValue() == 2) {
             number++;
         }
@@ -57,10 +57,10 @@ private int zweier(Dice[] dice){
     return number;
 }
 
-private int dreier(Dice[] dice){
+private int dreier(DiceGUI[] dice){
     int number = 0;
 
-    for (Dice d: dice) {
+    for (DiceGUI d: dice) {
         if(d.getValue() == 3) {
             number++;
         }
@@ -69,10 +69,10 @@ private int dreier(Dice[] dice){
     return number;
 }
 
-private int vierer(Dice[] dice){
+private int vierer(DiceGUI[] dice){
     int number = 0;
 
-    for (Dice d: dice) {
+    for (DiceGUI d: dice) {
         if(d.getValue() == 4) {
             number++;
         }
@@ -81,10 +81,10 @@ private int vierer(Dice[] dice){
     return number;
 }
 
-private int fuenfer(Dice[] dice){
+private int fuenfer(DiceGUI[] dice){
     int number = 0;
 
-    for (Dice d: dice) {
+    for (DiceGUI d: dice) {
         if(d.getValue() == 5) {
             number++;
         }
@@ -93,10 +93,10 @@ private int fuenfer(Dice[] dice){
     return number;
 }
 
-private int sechser(Dice[] dice){
+private int sechser(DiceGUI[] dice){
     int number = 0;// amount of times the number appears
 
-    for (Dice d: dice) {
+    for (DiceGUI d: dice) {
         if(d.getValue() == 6) {
             number++;
         }
@@ -105,12 +105,12 @@ private int sechser(Dice[] dice){
     return number;
 }
 
-private int dreierpasch(Dice[] dice){
+private int dreierpasch(DiceGUI[] dice){
 
     for(int i=1;i<=6;i++) {
         int number =0;
 
-        for(Dice d: dice) {
+        for(DiceGUI d: dice) {
             if(d.getValue() ==i){
                 number++;
             }
@@ -118,7 +118,7 @@ private int dreierpasch(Dice[] dice){
         if ( number >= 3) {
             int points =0;
 
-            for(Dice d : dice) {
+            for(DiceGUI d : dice) {
                 points += d.getValue();
             }
             return points;
@@ -126,9 +126,9 @@ private int dreierpasch(Dice[] dice){
     }
     return 0;}
 
-private int viererpasch(Dice[] dice){for(int i=1;i<=6;i++) {
+private int viererpasch(DiceGUI[] dice){for(int i=1;i<=6;i++) {
     int number =0;
-    for(Dice d: dice) {
+    for(DiceGUI d: dice) {
         if(d.getValue() ==i){
             number++;
         }
@@ -136,7 +136,7 @@ private int viererpasch(Dice[] dice){for(int i=1;i<=6;i++) {
     if ( number >= 4) {
         int points =0;
 
-        for(Dice d : dice) {
+        for(DiceGUI d : dice) {
             points += d.getValue();
         }
         return points;
@@ -144,13 +144,13 @@ private int viererpasch(Dice[] dice){for(int i=1;i<=6;i++) {
 }
     return 0;}
 
-private int fullhouse(Dice[] dice){
+private int fullhouse(DiceGUI[] dice){
     boolean pair = false;
     boolean triple = false;
     for (int i = 1; i <= 6; i++) {
         int number = 0;
 
-        for (Dice d : dice) {
+        for (DiceGUI d : dice) {
             if (d.getValue() == i) {
                 number++;
             }
@@ -172,10 +172,10 @@ private int fullhouse(Dice[] dice){
     return 0;
 }
 
-private int kleinestrasse(Dice[] dice) {
+private int kleinestrasse(DiceGUI[] dice) {
     boolean[] numbers = new boolean[7];
 
-    for (Dice d : dice) {
+    for (DiceGUI d : dice) {
         numbers[d.getValue()] = true;
     }
     int previous = 0;
@@ -205,10 +205,10 @@ private int kleinestrasse(Dice[] dice) {
     }
     return 0;
 }
-private int grossestrasse(Dice[] dice){
+private int grossestrasse(DiceGUI[] dice){
     boolean[] numbers = new boolean[7];
 
-    for (Dice d: dice) {
+    for (DiceGUI d: dice) {
         numbers[d.getValue()] = true;
     }
 
@@ -241,9 +241,9 @@ private int grossestrasse(Dice[] dice){
     return 0;
 }
 
-private int kniffel(Dice[] dice){
+private int kniffel(DiceGUI[] dice){
     int number1 = dice[0].getValue();
-    for (Dice d : dice) {
+    for (DiceGUI d : dice) {
         int currentNumber = d.getValue();
         if (currentNumber != number1) {
             return 0;
@@ -252,9 +252,9 @@ private int kniffel(Dice[] dice){
     return 50;
 }
 
-private int chance(Dice[] dice){
+private int chance(DiceGUI[] dice){
     int points = 0;
-    for (Dice d : dice) {
+    for (DiceGUI d : dice) {
         points += d.getValue();
     }
     return points;

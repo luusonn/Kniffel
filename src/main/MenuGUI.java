@@ -13,9 +13,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-public class Menu extends JFrame {
+public class MenuGUI extends JFrame {
 
-    public Menu() {
+    public MenuGUI() {
 
         setTitle("KNIFFEL Game");
         setSize(400, 400);
@@ -23,9 +23,7 @@ public class Menu extends JFrame {
 
         JPanel menuPanel = new JPanel();
 
-        menuPanel.setLayout(
-                new BoxLayout(menuPanel, BoxLayout.Y_AXIS)
-        );
+        menuPanel.setLayout(new BoxLayout(menuPanel, BoxLayout.Y_AXIS));
 
 
         JLabel title = new JLabel("KNIFFEL-GAME");
@@ -66,7 +64,7 @@ public class Menu extends JFrame {
 
             public void actionPerformed(ActionEvent e) {
             	
-            	SelectNumber selectNumber = new SelectNumber();
+            	SelectNumberGUI selectNumber = new SelectNumberGUI();
 
                 dispose();
             }

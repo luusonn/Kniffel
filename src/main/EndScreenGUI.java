@@ -5,9 +5,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import java.awt.Font;
 
-public class EndScreen extends JFrame {
+public class EndScreenGUI extends JFrame {
 
-	public EndScreen(scoreblock scoreboard) {
+	public EndScreenGUI(Scoreblock scoreboard) {
 		
 			boolean[] bonus = new boolean[scoreboard.playercount()];
 			int[] totals = new int[scoreboard.playercount()];
