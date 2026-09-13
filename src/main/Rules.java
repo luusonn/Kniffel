@@ -7,21 +7,22 @@ public class Rules {
 
 
 public int implentRule(DiceGUI[] dice,int rulenumber){
-    if(rulenumber==0){return einser(dice);}
-    if(rulenumber==1){return zweier(dice);}
-    if(rulenumber==2){return dreier(dice);}
-    if(rulenumber==3){return vierer(dice);}
-    if(rulenumber==4){return fuenfer(dice);}
-    if(rulenumber==5){return sechser(dice);}
-    if(rulenumber==6){return dreierpasch(dice);}
-    if(rulenumber==7){return viererpasch(dice);}
-    if(rulenumber==8){return fullhouse(dice);}
-    if(rulenumber==9){return kleinestrasse(dice);}
-    if(rulenumber==10){return grossestrasse(dice);}
-    if(rulenumber==11){return kniffel(dice);}
-    if(rulenumber==12){return chance(dice);}
+    switch(rulenumber){
+        case 0: return einser(dice);
+        case 1: return zweier(dice);
+        case 2: return dreier(dice);
+        case 3: return vierer(dice);
+        case 4: return fuenfer(dice);
+        case 5: return sechser(dice);
+        case 6: return dreierpasch(dice);
+        case 7: return viererpasch(dice);
+        case 8: return fullhouse(dice);
+        case 9: return kleinestrasse(dice);
+        case 10: return grossestrasse(dice);
+        case 11: return kniffel(dice);
+        case 12: return chance(dice);
 
-    else{return 1000;}//error happened
+        default:return 1000;}//error happened
 
 }
 
