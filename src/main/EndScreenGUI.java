@@ -29,16 +29,16 @@ public class EndScreenGUI extends JFrame {
 
 	                if (category == 6 && total >= 63) {
 	                    total += 35;
+	                    bonus[player] = true;
 	                }
 
-	                if (value != 900) {
-	                	bonus[player] = false;
+	                if (value != 900) { 	
 	                    total += value;
 	                }
 	            }
 
 	            totals[player] = total;
-	            if (bonus[player] = false) { b = 35;}
+	            if (bonus[player] == true) { b = 35;}
 	            
 	            JTextArea credits = new JTextArea("Player" + (player +1 ) + ": " + total + " points"
 	            									+ "\nBonus: " + b);

@@ -25,15 +25,6 @@ public int implentRule(DiceGUI[] dice,int rulenumber){
 
 }
 
-
-
-
-
-
-
-
-
-
 private int einser(DiceGUI[] dice){
     int number = 0;// amount of times the number appears(same for following classes)
 

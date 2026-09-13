@@ -51,8 +51,8 @@ public class DicecupGUI extends JPanel{
 	           
 	            }
 	        // die beiden zeilen fügen Knöpfe zum manuellen Verändern der Würfel ein ( for rigging)
-	        // riggbuttons();
-	       // for(int f = 0; f < 5; f++) {dicePanel.add(rigg[f]);}
+	         riggbuttons();
+	       for(int f = 0; f < 5; f++) {dicePanel.add(rigg[f]);}
 
 	        add(dicePanel, BorderLayout.CENTER);
 	        
